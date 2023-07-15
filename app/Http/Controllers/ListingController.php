@@ -8,6 +8,9 @@ use Illuminate\Validation\Rule;
 
 class ListingController extends Controller
 {
+   
+
+
     // Show all listings
     public function index() {
         return view('listings.index', [

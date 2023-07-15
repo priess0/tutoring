@@ -31,15 +31,15 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <!-- bootstrap css -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ asset('/css/bootstrap.min.css') }}" type="text/css">
         <!-- style css -->
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="{{ asset('css/style.css')}}">
         <!-- Responsive-->
-        <link rel="stylesheet" href="css/responsive.css">
+        <link rel="stylesheet" href="{{ asset('css/responsive.css')}}">
         <!-- fevicon -->
         <link rel="icon" href="images/fevicon.png" type="image/gif" />
         <!-- Scrollbar Custom CSS -->
-        <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+        <link rel="stylesheet" href="{{ asset('css/jquery.mCustomScrollbar.min.css')}}">
         <!-- Tweaks for older IEs-->
         <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
@@ -48,105 +48,30 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
     </head>
     <body class="mb-48">
-        <!-- loader  -->
+        <!-- loader  
             <div class="loader_bg">
                 <div class="loader"><img src="loading.gif" alt="#" /></div>
             </div>
-        <!-- end loader -->
-        <!-- header inner -->
-        <div class="header">
-            <div class="container-fluid">
-               <div class="row">
-                  <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
-                     <div class="full">
-                        <div class="center-desk">
-                           <div class="logo bg-black">
-                                <a href="/">
-                                    <img src="logos/logo-head-turquoise.webp" alt="#" >
-                                </a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
-                     <nav class="navigation navbar navbar-expand-md navbar-dark ">
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarsExample04">
-                           <ul class="navbar-nav mr-auto">
-                              <li class="nav-item">
-                                 <a class="nav-link" href="#services">Services </a>
-                              </li>
-                              <li class="nav-item">
-                                 <a class="nav-link" href="#work"> Our  Work</a>
-                              </li>
-                           </ul>
-                        </div>
-                     </nav>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </header>
-      <!-- end header inner -->
-        <nav class="flex justify-between items-center mb-4">
-            <a href="/">
-                <img class="w-24" src="{{asset('images/logo.png')}}" alt="" class="logo" />
-            </a>
-            <ul class="flex space-x-6 mr-6 text-lg">
-                
-                @auth
-                <li>
-                    <span class="font-bold uppercase">
-                        Welcome {{auth()->user()->name}}
-                    </span>
-                </li>
-                <li>
-                    <a href="/listings/manage" class="hover:text-laravel"
-                        ><i class="fa-solid fa-gear"></i>
-                        Manage Listings</a
-                    >
-                </li>
-                <li>
-                    <form class="inline" method="POST" action="/logout">
-                        @csrf
-                        <button type="submit">
-                            <i class="fa-solid fa-door-closed"></i>
-                             Logout
-                        </button>
-                    </form>
-                </li>
-                @else
-                
-                
-                <li>
-                    <a href="/register" class="hover:text-laravel"
-                        ><i class="fa-solid fa-user-plus"></i> Register</a
-                    >
-                </li>
-                <li>
-                    <a href="/login" class="hover:text-laravel"
-                        ><i class="fa-solid fa-arrow-right-to-bracket"></i>
-                        Login</a
-                    >
-                </li>
-                @endauth
+        end loader -->
 
-            </ul>
-        </nav>
         <main>
             {{$slot}}
         </main>
-        <footer class="fixed bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-90 md:justify-center">
+        <footer class="bottom-0 left-0 w-full flex items-center justify-start font-bold bg-laravel text-white h-24 mt-24 opacity-90 md:justify-center">
             <p class="ml-2">Copyright &copy; 2022, All Rights reserved</p>
 
             <a
                 href="/listings/create"
-                class="absolute top-1/3 right-10 bg-black text-white py-2 px-5"
+                class="bg-black text-white py-2 px-5"
                 >Post Job
             </a>
         </footer>
         <x-flash-message />
+        <!-- Javascript files
+            <script src="js/jquery.min.js"></script>
+            <script src="js/bootstrap.bundle.min.js"></script>
+            <script src="js/jquery-3.0.0.min.js"></script>
+            <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+            <script src="js/custom.js"></script>-->
     </body>
 </html>
